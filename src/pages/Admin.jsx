@@ -9,10 +9,12 @@ import Logout from "../assets/logout.png";
 import Post from "../assets/Post.png";
 import Logo from "../assets/MainLogo.png";
 import Complete from "../assets/Complete.png";
+import PendingIcon from "../assets/Pending.png"; // Add an icon for pending users
 
 import Inquiries from "../components/Inquiries";
 import Publish from "../components/Publish";
 import Completed from "../components/Completed";
+import PendingUsers from "../components/PendingUsers"; // Import the Pending Users component
 import Nav from "../components/Nav";
 
 const Admin = () => {
@@ -68,7 +70,7 @@ const Admin = () => {
               onClick={() => handleNavClick(2)}
             >
               <img src={Complete} alt="Completed" />
-              <span>Completed</span>
+              <span>Activity Logs</span>
             </div>
 
             <div
@@ -77,6 +79,15 @@ const Admin = () => {
             >
               <img src={Post} alt="Publish" />
               <span>Publish</span>
+            </div>
+
+            {/* New Pending Users Navigation */}
+            <div
+              className={styles.Admin_link}
+              onClick={() => handleNavClick(4)}
+            >
+              <img src={PendingIcon} alt="Pending Users" />
+              <span>Pending Users</span>
             </div>
           </div>
 
@@ -90,10 +101,10 @@ const Admin = () => {
             />
           )}
         </div>
-
         {navCount === 1 && <Inquiries />}
         {navCount === 2 && <Completed />}
         {navCount === 3 && <Publish />}
+        {navCount === 4 && <PendingUsers />} {/* Add Pending Users Component */}
       </div>
     </div>
   );

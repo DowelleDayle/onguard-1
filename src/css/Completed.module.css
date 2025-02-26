@@ -8,9 +8,25 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.Rejected {
+  background-color: #ffcccc; /* Light red background */
+  border-left: 5px solid red; /* Red border on the left */
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.RejectedText {
+  color: red;
+  font-weight: bold;
+}
+
 @media (max-width: 431px) {
   .Completed {
     margin-left: 0;
+    padding: 0.75rem;
+  }
+  .Rejected {
     padding: 0.75rem;
   }
 }

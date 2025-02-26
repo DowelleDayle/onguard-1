@@ -9,6 +9,7 @@ const Signup = ({ handleNavClick }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [address, setAddress] = useState(""); // New Address State
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ const Signup = ({ handleNavClick }) => {
     }
 
     try {
-      await signUp(email, password, firstName, lastName);
+      await signUp(email, password, firstName, lastName, address); // Passing address
       console.log("User signed up successfully!");
     } catch (error) {
       console.error("Error signing up:", error.message);
@@ -55,6 +56,16 @@ const Signup = ({ handleNavClick }) => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div className={styles.Address}>
+          <label>Address/Location:</label> {/* New Address Input */}
+          <input
+            type="text"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            placeholder="Enter your address"
           />
         </div>
 

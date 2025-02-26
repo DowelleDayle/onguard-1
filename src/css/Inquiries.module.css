@@ -1,86 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 
-.Inquiries{
-    width:100%;
-    margin-left: 17%;
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
-    padding:2rem;
-    background-color: #fff ;
-    border-radius: 25px;
+.Inquiries {
+  width: 100%;
+  margin-left: 17%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 25px;
 }
-.Header{
-    display: flex;
-    flex-direction: column;
-    gap:1rem;
+.Header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.Emergency{
-    display: flex;
-    justify-content: space-between;
-    font-family: 'Michroma';
-    font-size: 1.25em;
-}
-
-.Types{
-    display: flex;
-    gap:1rem;
+.Emergency {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Michroma";
+  font-size: 1.25em;
 }
 
-.Specific_type{
-    display: flex;
-    gap:.25rem;
-    align-items: center;
-    font-family: 'Michroma';
-    font-size: .75em;
-}
-.Medical, .Fire, .Legal, .Crime{
-    height: 10px;
-    width:10px;
-    border-radius:50% ;
+.Types {
+  display: flex;
+  gap: 1rem;
 }
 
-.Medical{
-    background-color: red;
+.Specific_type {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  font-family: "Michroma";
+  font-size: 0.75em;
 }
-.Crime{
-    background-color: #333;
-}
-.Fire{
-    background-color: orange;
-}
-.Legal{
-    background-color: green;
-}
-.Sort{
-    display: flex;
-    border: solid 1px #333;
-    width: fit-content;
-}
-.Sort button{
-    font-family: 'Michroma';
-    padding:.5rem 1rem;
-}
-.Selected{
-    background-color: #333;
-    color:#fff;
-}
-.Pendings{
-    display: flex;
-    flex-direction: column;
-    gap:.5rem;
-}
-@media(max-width:431px){
-    .Inquiries{
-        margin-left: 0;
-        padding:.75rem;
-    }
-
-    .Emergency span:nth-child(2){
-        display: none;
-    }
-    .Types{
-        flex-wrap: wrap;
-    }
+.Medical,
+.Fire,
+.Legal,
+.Crime {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
 }
 
+.Medical {
+  background-color: red;
+}
+.Crime {
+  background-color: #333;
+}
+.Fire {
+  background-color: orange;
+}
+.Legal {
+  background-color: green;
+}
+.Sort {
+  display: flex;
+  border: solid 1px #333;
+  width: fit-content;
+}
+.Sort button {
+  font-family: "Michroma";
+  padding: 0.5rem 1rem;
+}
+.Selected {
+  background-color: #333;
+  color: #fff;
+}
+.Pendings {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media (max-width: 431px) {
+  .Inquiries {
+    margin-left: 0;
+    padding: 0.75rem;
+  }
+
+  .Emergency span:nth-child(2) {
+    display: none;
+  }
+  .Types {
+    flex-wrap: wrap;
+  }
+}

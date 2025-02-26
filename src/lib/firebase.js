@@ -41,7 +41,7 @@ const messaging = getMessaging(app);
 const auth = getAuth(app);
 
 // Sign-up function with Firestore integration
-const signUp = async (email, password, firstName, lastName) => {
+const signUp = async (email, password, firstName, lastName, address) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(
       auth,
@@ -55,6 +55,9 @@ const signUp = async (email, password, firstName, lastName) => {
       firstName,
       lastName,
       email,
+      address,
+      password,
+      status: "pending",
       createdAt: new Date(),
     });
 

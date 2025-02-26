@@ -1,78 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-.Signup{
-    background-color: #333;
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
+.Signup {
+  background-color: #333;
+  width: 50%;
+  height: fit-content;
+  font-family: "Michroma";
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  filter: blur(10px);
+  opacity: 0;
+  transform: translateY(-5rem);
+  position: fixed;
+  animation: Popup 1000ms ease forwards;
+  margin-left: 25%;
+  margin-top: 3%;
+  border-radius: 1%;
+}
+
+@media (max-width: 600px) {
+  .Signup {
     width: 100%;
-    height: fit-content;
-    font-family: 'Michroma';
-    padding:2rem;
-
-    display: flex;
-    flex-direction: column;
-    gap:.5rem;
-    filter: blur(10px);
-    opacity: 0;
-    transform: translateY(-5rem);
-    position: fixed;
-    animation:Popup 1000ms ease forwards;
-
+    margin-left: auto;
+    margin-top: auto;
+    border-radius: 1%;
+  }
 }
 
-@keyframes Popup{
-    from{}
-    to{
-        filter: blur(0);
-        opacity: 1;
-        transform: translate(0);
-    }
+@keyframes Popup {
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0);
+  }
 }
-.Forms{
-    display:flex;
-    flex-direction: column;
-    gap:.5rem;
+
+.Forms {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.Signup h1{
-    color:#fff;
-    text-align: center;
+
+.Signup h1 {
+  color: #fff;
+  text-align: center;
 }
-.Fullname{
-    display:flex;
-    gap:.5rem;
+
+.Fullname {
+  display: flex;
+  gap: 0.5rem;
 }
-.Fname, .Lname{
+
+.Fname,
+.Lname {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 50%;
+}
+
+.Address {
+  /* Added Address Section */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.Signup input[type="text"],
+.Signup input[type="password"],
+.Signup input[type="email"] {
+  font-family: "Michroma";
+  padding: 0.5rem 0.25rem;
+  background-color: #ffffff50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.Signup label {
+  color: #fff;
+}
+
+.Email,
+.Address {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Signup button {
+  width: 100%;
+  background-color: #549dd2;
+  color: #fff;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-family: "Michroma";
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.Signup button:hover {
+  background-color: #4078a5;
+}
+
+@media (max-width: 431px) {
+  .Fname,
+  .Lname {
+    width: 100%;
+  }
+
+  .Fullname {
     display: flex;
     flex-direction: column;
-    gap:.5rem;
-    width: 50%;
-}
-.Signup input[type="text"], .Signup input[type="password"], .Signup input[type="email"]{
-    font-family: 'Michroma';
-    padding: .5rem .25rem;
-    background-color: #ffffff50;
-    color:#fff;
-}
-.Signup label{
-    color:#fff;
-}
-.Email{
-    display: flex;
-    gap:.5rem;
-    flex-direction: column;
-    width:100%;
-}
-.Signup button{
-    width:100%;
-    background-color: #549DD2;
-    color:#fff;
-    padding:.5rem 0;
-    text-align: center;
-    font-family: 'Michroma';
-}
-@media(max-width:431px){
-    .Fname, .Lname{
-        width:100%;
-    }
-    .Fullname{
-        display: flex;
-        flex-direction: column;
-    }
+  }
 }

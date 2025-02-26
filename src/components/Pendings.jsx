@@ -4,19 +4,18 @@ import { firestore, getUserInfo } from "../lib/firebase";
 import styles from "../css/Pendings.module.css";
 import User from "../assets/user.png";
 import { useEffect, useState } from "react";
-import { set } from "firebase/database";
 
 const Pendings = ({ handleViewClick, data }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [profileImg, setProfileImg] = useState(null);
 
-  const handleEndCall = async (emergencyId) => {
+  const handleDecline = async (emergencyId) => {
     try {
       if (emergencyId) {
         const emergencyRef = doc(firestore, "emergencies", emergencyId);
-        await updateDoc(emergencyRef, { status: "completed" });
-        console.log(`Emergency ${emergencyId} marked as completed.`);
+        await updateDoc(emergencyRef, { status: "rejected" });
+        console.log(`Emergency ${emergencyId} marked as rejected.`);
       }
     } catch (error) {
       console.error("Error updating emergency status:", error);
@@ -42,7 +41,7 @@ const Pendings = ({ handleViewClick, data }) => {
         <button onClick={() => handleViewClick(data.id, data.userId)}>
           Accept
         </button>
-        <button onClick={() => handleEndCall(data.id)}>Decline</button>
+        <button onClick={() => handleDecline(data.id)}>Decline</button>
       </div>
     </div>
   );

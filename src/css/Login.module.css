@@ -1,52 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-.Login{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    background-color: #333;
-    gap:.5rem;
-    filter: blur(10px);
-    opacity: 0;
-    transform: translateY(-5rem);
-    position: fixed;
-    animation:Popup 1000ms ease forwards;
-    width:100%;
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+.Login {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #333;
+  gap: 0.5rem;
+  filter: blur(10px);
+  opacity: 0;
+  transform: translateY(-5rem);
+  position: fixed;
+  animation: Popup 1000ms ease forwards;
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 3%;
+  border-radius: 1%;
 }
 
-@keyframes Popup{
-    from{}
-    to{
-        filter: blur(0);
-        opacity: 1;
-        transform: translate(0);
-    }
+@media (max-width: 600px) {
+  .Login {
+    width: 100%;
+    margin-left: auto;
+    margin-top: auto;
+    border-radius: 1%;
+  }
 }
-.Login h1{
-    text-align: center;
-    color:#fff;
-    font-family: 'Michroma';
+
+@keyframes Popup {
+  from {
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.Login h1 {
+  text-align: center;
+  color: #fff;
+  font-family: "Michroma";
 }
 .Login label {
-    color:#fff;
-    font-family: 'Michroma';
+  color: #fff;
+  font-family: "Michroma";
 }
-.Email, .Password{
-    display: flex;
-    flex-direction: column;
-    gap:.5rem;
+.Email,
+.Password {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
-.Login input[type="text"],.Login input[type="password"],.Login input[type="email"]{
-    padding:.5rem;
-    font-family: 'Michroma';
+.Login input[type="text"],
+.Login input[type="password"],
+.Login input[type="email"] {
+  padding: 0.5rem;
+  font-family: "Michroma";
 }
-.Login button{
-    background-color: #549DD2;
-    color:#fff;
-    padding:.5rem 0;
-    font-family: 'Michroma';
+.Login button {
+  background-color: #549dd2;
+  color: #fff;
+  padding: 0.5rem 0;
+  font-family: "Michroma";
 }
-.Form{
-    display: flex;
-    flex-direction: column;
-    gap:.5rem;
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

@@ -84,7 +84,7 @@ const Inquiries = () => {
           <span>Emergency Cases</span>
           <span>Pending Cases: {pendingCases.length}</span>
         </div>
-        <div className={styles.Types}>
+        {/* <div className={styles.Types}>
           <div className={styles.Specific_type}>
             <div className={styles.Medical}></div>
             <span>Medical Emergency</span>
@@ -104,21 +104,21 @@ const Inquiries = () => {
             <div className={styles.Legal}></div>
             <span>Legal Assistance</span>
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.Sort}>
           <button
             className={selectedButton === "Recent" ? styles.Selected : ""}
             onClick={() => handleClick("Recent")}
           >
-            Recent
+            Request
           </button>
-          <button
+          {/* <button
             className={selectedButton === "Oldest" ? styles.Selected : ""}
             onClick={() => handleClick("Oldest")}
           >
             Oldest
-          </button>
+          </button> */}
         </div>
       </div>
 

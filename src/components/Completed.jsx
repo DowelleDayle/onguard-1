@@ -5,39 +5,50 @@ import styles from "../css/Completed.module.css";
 import Finished from "./Finished";
 
 const Completed = () => {
-  const [completedCases, setCompletedCases] = useState([]); // State for completed emergencies
+  const [cases, setCases] = useState([]); // State for both completed & rejected emergencies
 
   useEffect(() => {
-    const fetchCompletedCases = async () => {
+    const fetchCases = async () => {
       try {
-        // Query Firestore for emergencies with status "completed"
+        // Query Firestore for emergencies with status "completed" or "rejected"
         const emergenciesRef = collection(firestore, "emergencies");
-        const q = query(emergenciesRef, where("status", "==", "completed"));
+        const q = query(
+          emergenciesRef,
+          where("status", "in", ["completed", "rejected"])
+        );
         const querySnapshot = await getDocs(q);
 
-        // Map query results to completed cases
+        // Map query results to cases
         const fetchedCases = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
 
-        setCompletedCases(fetchedCases); // Set state with fetched cases
+        setCases(fetchedCases); // Set state with fetched cases
       } catch (error) {
-        console.error("Error fetching completed emergencies:", error);
+        console.error("Error fetching emergencies:", error);
       }
     };
 
-    fetchCompletedCases();
+    fetchCases();
   }, []);
 
   return (
     <div className={styles.Completed}>
-      {completedCases.length > 0 ? (
-        completedCases.map((caseItem) => (
-          <Finished key={caseItem.id} data={caseItem} />
+      {cases.length > 0 ? (
+        cases.map((caseItem) => (
+          <div
+            key={caseItem.id}
+            className={caseItem.status === "rejected" ? styles.Rejected : ""}
+          >
+            <Finished data={caseItem} />
+            {caseItem.status === "rejected" && (
+              <p className={styles.RejectedText}>This call was rejected</p>
+            )}
+          </div>
         ))
       ) : (
-        <p>No completed emergencies found.</p>
+        <p>No completed or rejected emergencies found.</p>
       )}
     </div>
   );

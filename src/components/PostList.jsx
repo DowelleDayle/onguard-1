@@ -54,7 +54,7 @@ const PostsList = () => {
                 />
               )}
               <span className={styles.Date}>
-                {new Date(post.createdAt.seconds * 1000).toLocaleDateString()}
+                {new Date(post.createdAt.seconds * 1000).toLocaleString()}
               </span>
             </li>
           ))}
