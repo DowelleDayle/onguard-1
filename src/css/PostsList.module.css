@@ -59,7 +59,7 @@
   display: flex;
   gap:.5rem;
   align-items: center;
-  background-color: #EC4F4E;
+  background-color: #0F3E52;
   padding:.5rem .75rem;
   border-radius: 25px 25px 0 0;
 }
@@ -87,7 +87,7 @@
   font-family: 'Poppins', arial;
   font-size: .75em;
   color:#fff;
-  opacity:.5;
+  opacity:.75;
 }
 .Desc{
   padding:.75em;
@@ -99,5 +99,7 @@
   font-size: 1em;
 }
 .Desc img{
-  border:solid 2px #ec4f4e;
+  border:solid 2px #0F3E52;
+  width:75%;
+  margin:0 auto;
 }

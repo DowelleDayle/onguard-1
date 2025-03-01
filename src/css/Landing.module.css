@@ -27,7 +27,7 @@
 .Disaster {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem;
     justify-content: space-around;
     position: relative;
     background-image: url(../assets/bg-sample.jpg);
@@ -56,6 +56,9 @@
     width: 25%;
     transform: translateY(1rem);
     animation: bounce 1500ms ease forwards alternate-reverse infinite;
+    border:solid 2px #fff;
+
+    border-radius: 100px 0;
 }
 
 @keyframes bounce{
@@ -89,4 +92,23 @@
 .Line{
     width:20%;
     margin:0 auto;
+}
+.Footer{
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+    align-items: center;
+    justify-content: center;
+    padding:1rem;
+}
+.Footer img{
+    width:3rem;
+
+}
+.Footer span{
+    color:#fff;
+    font-size: 1.5em;
+    font-family: 'Poppins', ARIAL;
+
 }

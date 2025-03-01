@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Disaster from '../assets/disaster.png'
 import Line from '../assets/line.png'
 import Disaster2 from '../assets/Disaster2.jpg'
+import Logo from '../assets/MainLogo.png'
 
 import Nav from "../components/Nav";
 import Signup from "../components/Signup";
@@ -50,7 +51,13 @@ const Landing = ({
 
       {/* Footer Component */}
       {/* <Footer /> */}
+
+      <div className={styles.Footer}>
+        <img src={Logo} />
+        <span>ON-GUARD</span>
+      </div>
     </div>
+
   );
 };
 
