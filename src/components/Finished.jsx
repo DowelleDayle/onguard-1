@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getUserInfo } from "../lib/firebase";
 import { set } from "firebase/database";
 
-const Finished = ({ data }) => {
+const Finished = ({ data,handleUserUser,userDetails }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [profileImg, setProfileImg] = useState(null);
@@ -26,7 +26,7 @@ const Finished = ({ data }) => {
   }, []);
 
   return (
-    <div className={styles.Finished}>
+    <div className={styles.Finished} onClick={handleUserUser}>
       <div className={styles.Name}>
         <img src={profileImg || User} />
         <span>{`${firstName} ${lastName}`}</span>

@@ -11,17 +11,22 @@
     display: flex;
     height: 100%;
     padding:.25rem 2rem 2rem 2rem;
+    
 }
 .Admin_nav, .Admin_content{
     background-color: #fff;
 }
+.Admin_content{
+    border:solid 1px #33333350;
+}
 .Admin_nav{
     position: fixed;
+    border:solid 1px #33333350;
 }
 
 .Admin_nav{
     width:15%;
-    height:90%;
+    height:80%;
     border-radius: 25px;
     padding:2rem 0;
     display:flex;

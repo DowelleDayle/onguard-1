@@ -1,0 +1,33 @@
+.UserDetails{
+    display:flex;
+    font-size: 1.25em;
+    flex-direction: column;
+    gap:.5rem;
+    padding:1rem;
+    border: solid 1.5px #333333;
+    font-family: Arial;
+    width:50%;
+    border-radius: 5px;
+    filter: blur(10px);
+    opacity: 0;
+    animation:appear 500ms ease forwards;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+@keyframes appear{
+    from{}
+    to{
+
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.Closee{
+    padding:.5rem;
+    color:#fff;
+    background-color: #333;
+    border-radius: 0;
+}

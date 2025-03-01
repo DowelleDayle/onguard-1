@@ -9,15 +9,15 @@ import Logout from "../assets/logout.png";
 import Post from "../assets/Post.png";
 import Logo from "../assets/MainLogo.png";
 import Complete from "../assets/Complete.png";
-import PendingIcon from "../assets/Pending.png"; // Add an icon for pending users
+import PendingIcon from "../assets/Pending.png";
 
 import Inquiries from "../components/Inquiries";
 import Publish from "../components/Publish";
 import Completed from "../components/Completed";
-import PendingUsers from "../components/PendingUsers"; // Import the Pending Users component
+import PendingUsers from "../components/PendingUsers";
 import Nav from "../components/Nav";
 
-const Admin = () => {
+const Admin = ({handleUserUser, userDetails}) => {
   const [navCount, setNavCount] = useState(1);
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
@@ -81,7 +81,7 @@ const Admin = () => {
               <span>Publish</span>
             </div>
 
-            {/* New Pending Users Navigation */}
+
             <div
               className={styles.Admin_link}
               onClick={() => handleNavClick(4)}
@@ -102,9 +102,9 @@ const Admin = () => {
           )}
         </div>
         {navCount === 1 && <Inquiries />}
-        {navCount === 2 && <Completed />}
+        {navCount === 2 && <Completed handleUserUser={handleUserUser} userDetails={userDetails} />}
         {navCount === 3 && <Publish />}
-        {navCount === 4 && <PendingUsers />} {/* Add Pending Users Component */}
+        {navCount === 4 && <PendingUsers />}
       </div>
     </div>
   );

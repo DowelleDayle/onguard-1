@@ -9,6 +9,7 @@
   padding: 2rem;
   background-color: #fff;
   border-radius: 25px;
+  border:solid 1px #33333350;
 }
 .Header {
   display: flex;

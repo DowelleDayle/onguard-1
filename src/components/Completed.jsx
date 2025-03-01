@@ -3,14 +3,16 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { firestore } from "../lib/firebase"; // Import Firebase configuration
 import styles from "../css/Completed.module.css";
 import Finished from "./Finished";
+import UserDetails from "./UserDetails";
 
-const Completed = () => {
-  const [cases, setCases] = useState([]); // State for both completed & rejected emergencies
+const Completed = ({handleUserUser, userDetails}) => {
+
+  const [cases, setCases] = useState([]); 
 
   useEffect(() => {
     const fetchCases = async () => {
       try {
-        // Query Firestore for emergencies with status "completed" or "rejected"
+
         const emergenciesRef = collection(firestore, "emergencies");
         const q = query(
           emergenciesRef,
@@ -18,13 +20,13 @@ const Completed = () => {
         );
         const querySnapshot = await getDocs(q);
 
-        // Map query results to cases
+
         const fetchedCases = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
 
-        setCases(fetchedCases); // Set state with fetched cases
+        setCases(fetchedCases);
       } catch (error) {
         console.error("Error fetching emergencies:", error);
       }
@@ -34,14 +36,14 @@ const Completed = () => {
   }, []);
 
   return (
-    <div className={styles.Completed}>
+    <div className={styles.Completed} >
       {cases.length > 0 ? (
         cases.map((caseItem) => (
           <div
             key={caseItem.id}
             className={caseItem.status === "rejected" ? styles.Rejected : ""}
           >
-            <Finished data={caseItem} />
+            <Finished data={caseItem} handleUserUser={handleUserUser} userDetails={userDetails}/>
             {caseItem.status === "rejected" && (
               <p className={styles.RejectedText}>This call was rejected</p>
             )}
@@ -50,6 +52,10 @@ const Completed = () => {
       ) : (
         <p>No completed or rejected emergencies found.</p>
       )}
+
+      {
+        userDetails && <UserDetails handleUserUser={handleUserUser} userDetails={userDetails}/>
+      }
     </div>
   );
 };

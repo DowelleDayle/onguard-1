@@ -21,6 +21,11 @@ const App = () => {
     console.log(openCall);
   };
 
+  const [userDetails, setUserDetails] = useState(false)
+  const handleUserUser = () => {
+    setUserDetails( !userDetails)
+  }
+
   return (
     <div>
       <Router>
@@ -38,7 +43,7 @@ const App = () => {
             }
           />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/Admin" element={<Admin />} />
+          <Route path="/Admin" element={<Admin handleUserUser={handleUserUser} userDetails={userDetails} />} />
         </Routes>
       </Router>
       <Call openCall={openCall} handleCallClick={handleCallClick} />
