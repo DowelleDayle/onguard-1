@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { firestore } from "../lib/firebase"; // Firestore instance
 import styles from "../css/PostsList.module.css"; // Custom CSS file
+import Admin from '../assets/admin.png'
 
 const PostsList = () => {
   const [posts, setPosts] = useState([]); // State to store posts
@@ -44,18 +45,28 @@ const PostsList = () => {
         <ul>
           {posts.map((post) => (
             <li key={post.id} className={styles.Post}>
-              <h3>{post.headline}</h3>
-              <p>{post.description}</p>
-              {post.imageUrl && (
-                <img
-                  src={post.imageUrl}
-                  alt={post.headline}
-                  className={styles.Image}
-                />
-              )}
-              <span className={styles.Date}>
-                {new Date(post.createdAt.seconds * 1000).toLocaleString()}
-              </span>
+              <div className={styles.Name}>
+                <img src={Admin} />
+                <div className={styles.Name_inner}>
+                  <h3>{post.headline}</h3>
+                  <span className={styles.Date}>
+                    {new Date(post.createdAt.seconds * 1000).toLocaleString()}
+                  </span>
+                </div>
+              </div>
+              
+              <div className={styles.Desc}>
+                <p>{post.description}</p>
+                
+                {post.imageUrl && (
+                  <img
+                    src={post.imageUrl}
+                    alt={post.headline}
+                    className={styles.Image}
+                  />
+                )}
+              </div>
+
             </li>
           ))}
         </ul>

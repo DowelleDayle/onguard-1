@@ -2,6 +2,7 @@ import styles from "../css/Landing.module.css";
 import PropTypes from "prop-types";
 import Disaster from '../assets/disaster.png'
 import Line from '../assets/line.png'
+import Disaster2 from '../assets/Disaster2.jpg'
 
 import Nav from "../components/Nav";
 import Signup from "../components/Signup";
@@ -22,7 +23,7 @@ const Landing = ({
       {/* Navigation Component */}
       <Nav navCount={navCount} handleNavClick={handleNavClick} />
       <div className={styles.Disaster}>
-        <img src={Disaster} />
+        <img src={Disaster2} />
         <div className={styles.Disaster_inner}>
           <span className={styles.Caps}>ON-GUARD: YOUR SAFETY, OUR PRIORITY</span>
           <span className={styles.Smol}>Disasters strike when least expected, but with On-Guard, you’re always prepared. Stay informed with real-time alerts, emergency guides, and safety tools—all in one reliable app.</span>
