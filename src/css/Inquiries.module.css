@@ -9,7 +9,7 @@
   padding: 2rem;
   background-color: #fff;
   border-radius: 25px;
-  border:solid 1px #33333350;
+  border:solid 2px #333333;
 }
 .Header {
   display: flex;
@@ -19,8 +19,10 @@
 .Emergency {
   display: flex;
   justify-content: space-between;
-  font-family: "Michroma";
+  font-family: Helvetica, sans-serif;
   font-size: 1.25em;
+  border-bottom: solid 2px #33333350;
+  padding: 1rem;
 }
 
 .Types {

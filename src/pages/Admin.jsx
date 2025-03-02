@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "../css/Admin.module.css";
 
-import Inquiry from "../assets/Inquiry.png";
+import Inquiry from "../assets/inquiries.png";
 import Logout from "../assets/logout.png";
-import Post from "../assets/Post.png";
+import Post from "../assets/publish.png";
 import Logo from "../assets/MainLogo.png";
-import Complete from "../assets/Complete.png";
-import PendingIcon from "../assets/Pending.png";
+import Complete from "../assets/restore.png";
+import PendingIcon from "../assets/check.png";
 
 import Inquiries from "../components/Inquiries";
 import Publish from "../components/Publish";

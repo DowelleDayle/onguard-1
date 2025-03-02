@@ -5,7 +5,8 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 3rem 1.5rem;
+    border:solid 1px #33333350;
 }
 .Logo{
     display: flex;

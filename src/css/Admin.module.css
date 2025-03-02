@@ -4,6 +4,7 @@
 .Admin{
     display: flex;
     flex-direction: column;
+    gap:1.5rem;
     height: 100vh;
     background-color: #F0F0F0;
 }
@@ -33,6 +34,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: #333;
 }
 .Admin_inner{
     display: flex;
@@ -52,9 +54,11 @@
 }
 .Admin_link span{
     font-family: 'Montserrat';
+    color:#fff;
 }
 .Out{
     width:48px;
+    pointer-events: none;
 }
 .Admin_content{
     margin-left: 18%;
@@ -66,6 +70,7 @@
     justify-content: space-between;
     gap:1.5rem;
     border-radius: 25px;
+    border: solid 1px #333;
 }
 .Admin_right{
     display: flex;
@@ -125,11 +130,14 @@
     font-family: 'Michroma';
     align-items: center;
     gap:.25rem;
-    border-bottom: solid 1px #333;
+    border-bottom: solid 1px #fff;
 
 }
 .Logo img, .Logo span{
     margin-bottom: 2rem;
+}
+.Logo span{
+    color:#fff;
 }
 @media(max-width:431px){
     .Admin_nav{

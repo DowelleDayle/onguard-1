@@ -3,11 +3,12 @@
     justify-content: space-between;
     align-items: center;
     padding:.75rem 1rem;
-    background-color: #f0f0f0;
+    background-color: #ff6169;
     font-family: 'Montserrat';
-    border:solid 1.5px red;
+    border:solid 2px #333;
     cursor:pointer;
     transition: all 350ms;
+    border-radius: 10px;
 }
 .Finished:hover{
     scale:1.025;
@@ -20,4 +21,10 @@
 .Finished img{
     width:2rem;
     border-radius: 50%;
+}
+.Date{
+    color:#fff;
+}
+.Name{
+    color:#fff;
 }
